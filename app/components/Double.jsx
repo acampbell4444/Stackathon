@@ -17,11 +17,11 @@ export function Double ({personA, personB}) {
                <div>
                   <div className='row center'>
                     <div className='well'>
-                      <p className='weight A'>Person A Weight: {personA} lbs</p>
+                      <p className='weight A'>Person A {personA ? personA + ' lb' : ''}</p>
                       <Field name="personA" component='input' type="range" min='0' max='500' id='slider'/>
                     </div>
                     <div className='well'>
-                      <p className= 'weight B'>Person B Weight: {personB} lbs</p>
+                      <p className= 'weight B'>Person B {personB ? personB + ' lb' : ''} </p>
                       <Field name="personB" component='input' type="range" min='0' max='500' id='slider'/>
                     </div>
                     <div className='error' >

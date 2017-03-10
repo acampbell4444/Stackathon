@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router';
 import { Field, reduxForm } from 'redux-form'
 
-let spotOne, spotTwo, spotThree, spotFour, position
+let spotOne, spotTwo, spotThree, spotFour, position,error
 export function DoubleSp ({personA, personB}) {     
     let diff = (+personA > +personB) ? (personA - personB) : (personB - personA)
-    let error = (diff>135&&personA>0&&personB>0) ? 'The Maximum weight difference for this bar is 135 lbs.\n The Current Difference is ' + diff + ' lbs.' : null
+
+    //let error = (diff>135&&personA>0&&personB>0) ? 'The Maximum weight difference for this bar is 135 lbs.\n The Current Difference is ' + diff + ' lbs.' : null
+    let show = personA || personB ? true : false
     spBalance(personA,personB)
     return (
       <div >
@@ -17,11 +19,11 @@ export function DoubleSp ({personA, personB}) {
                <div>
                   <div className='row center'>
                     <div className='well'>
-                      <p className='weight A'>Person A Weight: {personA} lbs</p>
+                      <p className='weight A'>Person A {personA ? personA + ' lb' : ''} </p>
                       <Field name="personA" component='input' type="range" min='0' max='500' id='slider'/>
                     </div>
                     <div className='well'>
-                      <p className= 'weight B'>Person B Weight: {personB} lbs</p>
+                      <p className= 'weight B'>Person B {personB ? personB + ' lb' : ''} </p>
                       <Field name="personB" component='input' type="range" min='0' max='500' id='slider'/>
                     </div>
                     <div className='error' >
@@ -41,7 +43,13 @@ export function DoubleSp ({personA, personB}) {
               <p className={spotTwo + ' indicators spTop' } id='spLeft2'>{spotTwo}</p>
               <p className={spotThree + ' indicators spTop' } id='spLeft3'>{spotThree}</p>
               <p className={spotFour + ' indicators spTop' } id='spLeft4'>{spotFour}</p>
-              <p className={'spPosArrow indicators spPosArrowTop' } id={'spArrowLeft' + position}><span className='glyphicon glyphicon-arrow-down'></span> </p>
+              {
+                show&&(
+                  <p className={'spPosArrow indicators spPosArrowTop' } id={'spArrowLeft' + position}>
+                    <span className='glyphicon glyphicon-arrow-down'></span> 
+                  </p>
+                )
+              }
 
             </div>
           </div>
@@ -59,7 +67,9 @@ export default reduxForm({
 })(DoubleSp)
 
 function spBalance(a,b) {
+  spotOne = spotTwo = spotThree = spotFour =
   position = 0
+  error = null
   if(!+a&&!+b){
     spotOne=null
     spotFour=null
@@ -79,12 +89,6 @@ function spBalance(a,b) {
     spotTwo=null
     spotThree=null
     return
-  }else if(a-b>135||b-a>135){
-    spotOne=null
-    spotFour=null
-    spotTwo = null
-    spotThree = null
-    return
   }else{
     let aGreater = +a >= +b
     spotOne= aGreater ? 'A' : 'B'
@@ -92,6 +96,12 @@ function spBalance(a,b) {
     spotThree = aGreater ? 'B' : 'A'
     spotFour = aGreater ? 'B' : 'A'
     let diff = Math.abs(a - b)
+    console.log('diffy',diff)
+    error = (diff>135) ? 'The Maximum weight difference for this bar is 135 lbs.\n The Current Difference is ' + diff + ' lbs.' : null
+    if(error){position=9}
+    console.log('err',error)
+    console.log('pz',position)
+
 
     switch(true) {
       case (diff<=10):
