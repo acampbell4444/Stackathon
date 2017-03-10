@@ -1,3 +1,230 @@
-.red {
-	color:red;
+
+
+.center {
+	text-align:center;
+	margin: 0 auto;
 }
+
+.header {
+	margin: 20px auto;
+	text-align:center;
+}
+
+.tripleShrink {
+	width:50%;
+	height:70%;
+}
+
+.dubShrink {
+	width: 40%;
+	height: 70%
+}
+
+.barRow {
+	height: 200px
+}
+
+.thumbs {
+	height: 180px;
+	width: 320px;
+}
+
+.margin40 {
+	margin:20px;
+}
+
+.bottom50 {
+	margin-bottom:50px;
+}
+
+.bottom20 {
+	margin-bottom:20px;
+}
+
+.top100 {
+	margin-top: 100px;
+}
+
+.barContainer {
+	margin: 0 auto;
+	height: 300px;
+	width: 600px;
+	position: relative;
+}
+
+.barImage {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.indicators {
+  z-index: 100;
+  position: absolute;
+  font-size: 40px;
+  font-weight: bold;
+}
+/*-----------------------------------------  bar placeholders ---------------------- */
+/*-----------------------------------------  sp tandem bar  ---------------------- */
+.spTop {
+  top: 220px;
+}
+
+.spPosArrowTop {
+  top: -21px;
+}
+
+#spArrowLeft0{
+  left: 473px;
+}
+
+#spArrowLeft1{
+  left: 453px;
+}
+
+#spArrowLeft2{
+  left: 435px;
+}
+
+#spArrowLeft3{
+  left: 416px;
+}
+
+#spArrowLeft4{
+  left: 397px;
+}
+
+#spArrowLeft5{
+  left: 378px;
+}
+
+.spPosArrow {
+  font-size:40px;
+}
+
+#spLeft1 {
+  left: 29px;
+}
+
+#spLeft2 {
+  left: 254px;
+}
+
+#spLeft3 {
+  left: 319px;
+}
+
+#spLeft4 {
+  left: 545px;
+}
+/*------------------------------------------------ start dub bar*/
+/*------------------------------------------------ end sp. start dub bar*/
+.dubTop {
+  top: 163px;
+}
+
+#dubLeft1 {
+  left:25px;
+}
+
+#dubLeft2 {
+  left:77px;
+}
+
+#dubLeft3 {
+  left:247px;
+}
+
+#dubLeft4 {
+  left:299px;
+}
+
+#dubLeft4A {
+  left:299px;
+}
+
+#dubLeft4B {
+  left:299px;
+}
+#dubLeft4AB {
+  left:285px;
+}
+
+#dubLeft4BA {
+  left:285px;
+}
+
+
+
+#dubLeft5 {
+  left:350px;
+}
+
+#dubLeft5A {
+  left:350px;
+}
+
+#dubLeft5B {
+  left:350px;
+}
+
+#dubLeft5AB {
+  left:346px;
+}
+
+#dubLeft5BA {
+  left:342px;
+}
+
+#dubLeft6 {
+  left:540px;
+}
+
+
+
+
+
+
+
+/*--------------------------*/
+.A {
+	color:orange;
+}
+
+.B {
+	color:purple;
+}
+
+.C {
+	color: red;
+}
+
+#slider {
+	width:200px;
+}
+
+.well {
+	display:inline-block;
+	margin: 30px 10px;
+}
+
+.weight {
+	font-style:bold;
+	font-size: 20px;
+}
+
+.error {
+	font-size:20px;
+	color:red;
+	margin: 20px auto;
+	font-style: bold;
+}
+
+
+
+
+
+
+
+
+

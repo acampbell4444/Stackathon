@@ -7,7 +7,7 @@ const App = connect(
   ({ auth }) => ({ user: auth })
 ) (
   ({ user, children }) =>
-    <div>
+    <div className='container top100'>
       <nav>
         {user ? <WhoAmI/> : <Login/>}
       </nav> 
