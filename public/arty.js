@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 
       command = {
-        indexes: ["pick *"],
+        indexes: ["select *"],
         smart: true,
         action: function(i,wildcard){
             console.log(wildcard)
