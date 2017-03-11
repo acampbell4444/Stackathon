@@ -1,18 +1,32 @@
-      var command = {
-        indexes: ["person a *"],
+let command, stopArtyom
+
+let funky = function(){return startArtyom()}
+$(document).ready(function(){
+
+
+      command = {
+        indexes: ["pick *"],
         smart: true,
         action: function(i,wildcard){
-          artyom.say(wildcard);
-        }
-      };
-      
-      artyom.addCommands(command);
+            console.log(wildcard)
+            let letter = wildcard[0].toLowerCase()
+            let num = wildcard.replace(/\D/g,'')
+            $('.slider'+letter).focus().val(num).blur()
+            funky()
+         }
 
-      function startArtyom(){
+          
+      };
+
+      artyom.addCommands(command);
+      
+      
+
+      startArtyom = function(){
         artyom.initialize(
           {
             lang: 'en-GB', 
-            coninuous: false,
+            coninuous: true,
             debug: true,
             listen: true
           }
@@ -22,3 +36,6 @@
       function stopArtyom(){
         return artyom.fatality()
       }
+
+})
+
