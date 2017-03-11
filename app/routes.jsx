@@ -12,6 +12,7 @@ import MultiFlyAdvContainer from './containers/MultiFlyAdvContainer'
 import MultiFlyContainer from './containers/MultiFlyContainer'
 import DoubleContainer from './containers/DoubleContainer'
 import DoubleSpContainer from './containers/DoubleSpContainer'
+import VoiceRecognitionDemo from './components/VoiceReq'
 
 export default function Root () {
 	return (
@@ -25,7 +26,7 @@ export default function Root () {
             <Route path="/multiFly" component={MultiFlyContainer} />
             <Route path="/multiFlyAdv" component={MultiFlyAdvContainer} />
             <Route path="/double" component={DoubleContainer} />
-        		<Route path="/doubleSp" component={DoubleSpContainer} />
+            <Route path="/doubleSp" component={DoubleSpContainer} />
       			</Route>
   			</Router>
   		</Provider>

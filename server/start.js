@@ -48,6 +48,9 @@ module.exports = app
   .use(passport.session())
 
   .use('/bootstrap', express.static(join(__dirname, '../node_modules/bootstrap/dist')))
+  .use('/react-voice-components', express.static(join(__dirname, '../node_modules/react-voice-components/')))
+
+  .use('/artyom', express.static(join(__dirname, '../node_modules/artyom.js/build-vanilla')))
   .use('/public', express.static(resolve(__dirname, '..', 'public')))
 
   // Serve static files from ../public

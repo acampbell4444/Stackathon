@@ -3,11 +3,20 @@
   <head>
   <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
    <link href="/public/stylesheets/style.css" rel="stylesheet">
+    <script src="/artyom/artyom.min.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
     </script>
+     <script src="/arty.js"></script>
   </head>
   <body>
+    <div>
+      <input type='button' onclick='startArtyom()' value='Start voice commands'/><br>
+      <input type='button' onclick='stopArtyom()' value='Stop voice commands'/><br>
+      <span id = 'output'></span>
+    </div>
+
     <div id='app'></div>
+   
     <script async defer src=/bundle.js></script> 
     <script src="/bootstrap/js/bootstrap.min.js"></script>   
   </body>
