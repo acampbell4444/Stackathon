@@ -33,7 +33,7 @@ export default class BarBalancer extends Component {
 	        		<button onClick={e=>browserHistory.push('/multiflyAdv')} className='bartwo bar2'>
 	        		<p className='barNum'>2</p>
 		        		<img className='img-responsive img-thumbnail thumbs center tripleShrink' 
-		       		 		 src='../../public/MultiFlyAdv.png'
+		       		 		 src='../../public/MultiFlyAdv.jpg'
 		       			/>
 		       		</button>
 		    	</span>
@@ -44,7 +44,7 @@ export default class BarBalancer extends Component {
 					<button onClick={e=>browserHistory.push('/double')} className='barthree bar3'>
 					<p className='barNum'>3</p>
 			       		<img className='img-responsive img-thumbnail thumbs center dubShrink' 
-			       		 	 src='../../public/Doublizer.png'
+			       		 	 src='../../public/Doublizer.jpg'
 			       		/>
 		       		</button>
 		    	</span>
@@ -52,7 +52,7 @@ export default class BarBalancer extends Component {
 					<button onClick={e=>browserHistory.push('/doubleSp')} className='barfour barfor bar4'>
 					<p className='barNum'>4</p>
 		       			<img className='img-responsive img-thumbnail  thumbs center dubShrink' 
-		       				 src='../../public/DoublSP.png'
+		       				 src='../../public/DoublSP.jpg'
 		        		/>
 	        		</button>
 		    	</span>
