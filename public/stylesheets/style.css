@@ -2,6 +2,10 @@
   padding-top:13px;
 }
 
+.login {
+  width: 153px;
+}
+
 .stretch {
   margin-top: 11px;
   width: 500px;
@@ -10,12 +14,22 @@
   padding-top: 7px;
   color:deeppink;
   font-size: 18px;
-
 }
+
+.barone, .bartwo, .barthree, .barfour {
+  background-color: lemonchiffon;
+  padding: 0 15px 15px 15px
+}
+
+.well {
+  background-color: turquoise;
+}
+
 
 .barNum {
   font-size:19px;
-  color: indigo;
+  font-style:bold;
+  color: black;
   margin: 0;
 }
 
@@ -59,13 +73,11 @@
 }
 
 .margin40 {
-	margin:20px;
+	margin: 0 25px
   /*//hahahahha*/
 }
 
-.bottom50 {
-	margin-bottom:50px;
-}
+
 
 .bottom20 {
 	margin-bottom:20px;
@@ -314,7 +326,7 @@
 
 /*--------------------------*/
 .A {
-	color:orange;
+	color:chocolate;
 }
 
 .B {
@@ -330,6 +342,11 @@
 }
 
 .well {
+  display:inline-block;
+  margin: 30px 10px;
+}
+
+.well .funk {
 	display:inline-block;
 	margin: 30px 10px;
 }

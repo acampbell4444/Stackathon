@@ -12,21 +12,27 @@ import MultiFlyAdvContainer from './containers/MultiFlyAdvContainer'
 import MultiFlyContainer from './containers/MultiFlyContainer'
 import DoubleContainer from './containers/DoubleContainer'
 import DoubleSpContainer from './containers/DoubleSpContainer'
-import VoiceRecognitionDemo from './components/VoiceReq'
+import NewCommand from './components/NewCommand'
+import {grabCommands} from './reducers/command'
+
+
+const getCommands = () => {
+  return store.dispatch(grabCommands())
+}
+
 
 export default function Root () {
 	return (
     	<Provider store={store}>
       		<Router history={browserHistory}>
-      			<Route path="/" component={App}>
-        		<IndexRedirect to="/barBalancer" />
-        		<Route path="/home" component={Home} />
-        		<Route path="/log" component={Log} />
-            <Route path="/barBalancer" component={BarBalancerContainer} />
-            <Route path="/multiFly" component={MultiFlyContainer} />
-            <Route path="/multiFlyAdv" component={MultiFlyAdvContainer} />
-            <Route path="/double" component={DoubleContainer} />
-            <Route path="/doubleSp" component={DoubleSpContainer} />
+      			<Route path="/" component={App} onEnter={getCommands}>
+          		<IndexRedirect to="/barBalancer" />
+              <Route path="/barBalancer" component={BarBalancerContainer} onEnter={getCommands} />
+              <Route path="/multiFly" component={MultiFlyContainer} onEnter={getCommands}/>
+              <Route path="/multiFlyAdv" component={MultiFlyAdvContainer} onEnter={getCommands}/>
+              <Route path="/double" component={DoubleContainer} onEnter={getCommands}/>
+              <Route path="/doubleSp" component={DoubleSpContainer} onEnter={getCommands}/>
+              <Route path="/newCommand" component={NewCommand} />
       			</Route>
   			</Router>
   		</Provider>

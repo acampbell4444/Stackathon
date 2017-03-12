@@ -4,6 +4,8 @@ import Login from './Login'
 import WhoAmI from './WhoAmI'
 import { Link, browserHistory } from 'react-router';
 
+
+
 const App = connect(
   ({ auth }) => ({ user: auth })
 ) (
@@ -134,7 +136,6 @@ let cmds=   [
 	function start(language){
 
 		startArtyom = function(t){
-			console.log('t',t)
 			artyom.initialize({
 				lang: language,// Start artyom with provided language
 				continuous:true,// Continuous mode enabled

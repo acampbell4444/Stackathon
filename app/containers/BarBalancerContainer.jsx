@@ -5,8 +5,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
-    // active: state.bar.active,
-    // etc: state.bar.etc
+    fetchedCommands: state.commands.allCommands
 
   };
 };

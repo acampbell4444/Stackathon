@@ -3,7 +3,8 @@ import {reducer} from 'redux-form'
 
 const rootReducer = combineReducers({
   auth: require('./auth').default,  
-  form: reducer 
+  form: reducer, 
+  commands: require('./command').default 
 })
 
 export default rootReducer
