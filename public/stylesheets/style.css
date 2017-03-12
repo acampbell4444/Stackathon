@@ -5,12 +5,18 @@
 .stretch {
   margin-top: 11px;
   width: 500px;
-  height: 40px;
+  height: 80px;
   text-align: center;
   padding-top: 7px;
   color:deeppink;
   font-size: 18px;
 
+}
+
+.barNum {
+  font-size:19px;
+  color: indigo;
+  margin: 0;
 }
 
 .brand {
@@ -54,6 +60,7 @@
 
 .margin40 {
 	margin:20px;
+  /*//hahahahha*/
 }
 
 .bottom50 {

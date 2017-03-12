@@ -7,9 +7,12 @@ import { Link, browserHistory } from 'react-router';
 
 
 
-
 export default class BarBalancer extends Component {
   render() {
+  artyom.addCommands([{
+                    	indexes: ["hello"],
+                        action: i=> artyom.say("hey buddy!")
+                  }])
       
     return (
 	    <div className=''>
@@ -17,7 +20,9 @@ export default class BarBalancer extends Component {
     		<h3 className='center bottom20'>Triple Bars</h3>
 			<div className='row center bottom50'>
 				<span className='margin40 '>
+
 					<button onClick={e=>browserHistory.push('/multifly')} className='barone bar1'>
+					<p className='barNum'>1</p>
 						<img className='img-responsive img-thumbnail thumbs center tripleShrink' 
 				 			 src='../../public/MultiFly.png'
 						/>
@@ -26,6 +31,7 @@ export default class BarBalancer extends Component {
 				
 				<span className='margin40'> 
 	        		<button onClick={e=>browserHistory.push('/multiflyAdv')} className='bartwo bar2'>
+	        		<p className='barNum'>2</p>
 		        		<img className='img-responsive img-thumbnail thumbs center tripleShrink' 
 		       		 		 src='../../public/MultiFlyAdv.png'
 		       			/>
@@ -36,6 +42,7 @@ export default class BarBalancer extends Component {
 	    	<div className='row center'>
 				<span className='margin40'>
 					<button onClick={e=>browserHistory.push('/double')} className='barthree bar3'>
+					<p className='barNum'>3</p>
 			       		<img className='img-responsive img-thumbnail thumbs center dubShrink' 
 			       		 	 src='../../public/Doublizer.png'
 			       		/>
@@ -43,6 +50,7 @@ export default class BarBalancer extends Component {
 		    	</span>
 				<span className='margin40'>
 					<button onClick={e=>browserHistory.push('/doubleSp')} className='barfour barfor bar4'>
+					<p className='barNum'>4</p>
 		       			<img className='img-responsive img-thumbnail  thumbs center dubShrink' 
 		       				 src='../../public/DoublSP.png'
 		        		/>
