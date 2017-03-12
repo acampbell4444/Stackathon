@@ -33,7 +33,7 @@ export default class BarBalancer extends Component {
 	        		<button onClick={e=>browserHistory.push('/multiflyAdv')} className='bartwo bar2'>
 	        		<p className='barNum'>2</p>
 		        		<img className='img-responsive img-thumbnail thumbs center tripleShrink' 
-		       		 		 src='../../public/MultiFlyAdv.jpg'
+		       		 		 src='../../public/mbva.png'
 		       			/>
 		       		</button>
 		    	</span>
