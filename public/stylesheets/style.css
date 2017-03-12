@@ -1,5 +1,28 @@
+.log{
+  padding-top:13px;
+}
 
+.stretch {
+  margin-top: 11px;
+  width: 500px;
+  height: 40px;
+  text-align: center;
+  padding-top: 7px;
+  color:deeppink;
+  font-size: 18px;
 
+}
+
+.brand {
+  text-align: center;
+  margin-left: 10%;
+
+}
+
+.whoami-user-name {
+  color: white;
+  margin-right:7px;
+}
 .center {
 	text-align:center;
 	margin: 0 auto;

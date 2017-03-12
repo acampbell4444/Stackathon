@@ -13,8 +13,6 @@ cWt = personC
     // let error = (diff>110&&personA>0&&personB>0) ? 'The Maximum weight difference for this bar is 110 lbs.\n The Current Difference is ' + diff + ' lbs.' : null
     tripBalance(+personA,+personB, +personC)
     return (
-      <div >
-         
          <div className='container-fluid'>
             <h2 className='header'>The MultiFlyer (Regular) Triple Bar</h2>
             <div>
@@ -23,15 +21,15 @@ cWt = personC
                   <div className='row center'>
                     <div className='well trip'>
                       <p className='weight A'>Person A {personA ? personA + ' lb' : ''}</p>
-                      <Field name="personA" component='input' type="range" min='0' max='500' className='slidera'/>
+                      <Field name="personA" component='input' type="range" min='0' max='400' className='slidera'/>
                     </div>
                     <div className='well'>
                       <p className= 'weight B'>Person B {personB ? personB + ' lb' : ''} </p>
-                      <Field name="personB" component='input' type="range" min='0' max='500' className='sliderb'/>
+                      <Field name="personB" component='input' type="range" min='0' max='400' className='sliderb'/>
                     </div>
                     <div className='well'>
                       <p className= 'weight C'>Person C {personC ? personC + ' lb' : ''} </p>
-                      <Field name="personC" component='input' type="range" min='0' max='500' className='sliderc'/>
+                      <Field name="personC" component='input' type="range" min='0' max='400' className='sliderc'/>
                     </div>
                     <div className='error' >
                 	{
@@ -41,7 +39,8 @@ cWt = personC
                   </div>
                 </div>
             </form>
-          </div>
+
+
            
 
             <div className='container-fluid barContainer'>
@@ -99,9 +98,7 @@ function tripBalance(a,b,c) {
  }
 
  function justDubs(a,b){
-  console.log('dubbing', a,b)
  	let aGreater = a[1] >= b[1]
-  console.log('agreat',aGreater)
  	let diff = Math.abs(a[1]-b[1])
  	if(diff>172){
  		position = 9

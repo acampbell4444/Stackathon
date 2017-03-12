@@ -5,7 +5,6 @@ export default class Log extends Component {
       
     return (
       <div className='jumbotron'>
-      Log page homie.
        <button className='btn btn-success'>submit</button>
        <button className='btn btn-success'>submit</button>
       </div>

@@ -3,7 +3,10 @@ import { Link } from 'react-router';
 import { Field, reduxForm } from 'redux-form'
 
 let spotOne, spotTwo, spotThree, spotFour, spotFive, spotSix
-export function Double ({personA, personB}) {     
+let errorFlag 
+export function Double ({personA, personB}) { 
+
+
     let diff = (+personA > +personB) ? (personA - personB) : (personB - personA)
     let error = (diff>110&&personA>0&&personB>0) ? 'The Maximum weight difference for this bar is 110 lbs.\n The Current Difference is ' + diff + ' lbs.' : null
     spBalance(personA,personB)
@@ -18,11 +21,11 @@ export function Double ({personA, personB}) {
                   <div className='row center'>
                     <div className='well'>
                       <p className='weight A'>Person A {personA ? personA + ' lb' : ''}</p>
-                      <Field name="personA" component='input' type="range" min='0' max='500' className='slidera'/>
+                      <Field name="personA" component='input' type="range" min='0' max='400' className='slidera'/>
                     </div>
                     <div className='well'>
                       <p className= 'weight B'>Person B {personB ? personB + ' lb' : ''} </p>
-                      <Field name="personB" component='input' type="range" min='0' max='500' className='sliderb'/>
+                      <Field name="personB" component='input' type="range" min='0' max='400' className='sliderb'/>
                     </div>
                     <div className='error' >
                       {error ? error : personA&&personB ? "Difference " + diff : null  }

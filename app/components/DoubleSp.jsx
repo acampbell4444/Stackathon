@@ -20,11 +20,11 @@ export function DoubleSp ({personA, personB}) {
                   <div className='row center'>
                     <div className='well'>
                       <p className='weight A'>Person A {personA ? personA + ' lb' : ''} </p>
-                      <Field name="personA" component='input' type="range" min='0' max='500' className='slidera'/>
+                      <Field name="personA" component='input' type="range" min='0' max='400' className='slidera'/>
                     </div>
                     <div className='well'>
                       <p className= 'weight B'>Person B {personB ? personB + ' lb' : ''} </p>
-                      <Field name="personB" component='input' type="range" min='0' max='500' className='sliderb'/>
+                      <Field name="personB" component='input' type="range" min='0' max='400' className='sliderb'/>
                     </div>
                     <div className='error' >
                       {error ? error : personA&&personB ? "Difference " + diff : null  }

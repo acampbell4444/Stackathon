@@ -19,7 +19,7 @@ export default function Root () {
     	<Provider store={store}>
       		<Router history={browserHistory}>
       			<Route path="/" component={App}>
-        		<IndexRedirect to="/home" />
+        		<IndexRedirect to="/barBalancer" />
         		<Route path="/home" component={Home} />
         		<Route path="/log" component={Log} />
             <Route path="/barBalancer" component={BarBalancerContainer} />
