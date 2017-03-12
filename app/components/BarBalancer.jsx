@@ -25,7 +25,7 @@ export default class BarBalancer extends Component {
 			<div className='row center bottom50'>
 				<span className='margin40 well'>
 
-					<button onClick={e=>browserHistory.push('/multifly')} className='barone bar1'>
+					<button onClick={e=>browserHistory.push('/multifly')} className='barone bar1 barwon'>
 					<p className='barNum'>1</p>
 						<img className='img-responsive img-thumbnail thumbs center tripleShrink' 
 				 			 src='../../public/MultiFly.png'
@@ -34,7 +34,7 @@ export default class BarBalancer extends Component {
 					</span>
 				
 				<span className='margin40 well'> 
-	        		<button onClick={e=>browserHistory.push('/multiflyAdv')} className='bartwo bar2'>
+	        		<button onClick={e=>browserHistory.push('/multiflyAdv')} className='bartwo bar2 barto bartoo'>
 	        		<p className='barNum'>2</p>
 		        		<img className='img-responsive img-thumbnail thumbs center tripleShrink' 
 		       		 		 src='../../public/MultiFlyAdv.png'

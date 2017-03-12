@@ -6,6 +6,11 @@
   width: 153px;
 }
 
+.loginput {
+  width:100px;
+  font-size: 10px;
+}
+
 .stretch {
   margin-top: 11px;
   width: 500px;

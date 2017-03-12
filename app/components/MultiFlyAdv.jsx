@@ -21,7 +21,7 @@ cWt = +personC
                   <div className='row center'>
                     <div className='well trip'>
                       <p className='weight A'>Person A {personA ? personA + ' lb' : ''}</p>
-                      <Field name="personA" component='input' type="range" min='0' max='400' className='slidera'/>
+                      <Field name="personA" component='input' type="range" min='0' max='400' className='slidera '/>
                     </div>
                     <div className='well'>
                       <p className= 'weight B'>Person B {personB ? personB + ' lb' : ''} </p>

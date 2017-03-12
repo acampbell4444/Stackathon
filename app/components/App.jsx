@@ -12,8 +12,6 @@ const App = connect(
   ({ user, children }) =>
   <div>
  
-
-
 	<nav className="navbar navbar-inverse">
   		<div className="container-fluid">
 			<div className="navbar-header">
@@ -35,10 +33,22 @@ const App = connect(
         			</div>
   
       			</form>
+            <ul className="nav navbar-nav navbar-right">
+              <li className="dropdown">
+                  <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><button id='showCommands' className='button btn-xs btn-success'>Conversation</button> <span className="caret"></span></a>
+                  <ul className="dropdown-menu">
+                    <li><a href="#">Teach Arty to Talk</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">"Go Back" : Goes to the last page</a></li>
+                    <li role="separator" className="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+              </li>
+            </ul>
       			<ul className="nav navbar-nav navbar-right">
-        			<li><a><button className='button btn-primary home' onClick={e=>browserHistory.push('/barBalancer')}>Home</button></a></li>
+        			<li><a><button className='button btn-xs btn-primary home' onClick={e=>browserHistory.push('/barBalancer')}>Home</button></a></li>
         			<li className="dropdown">
-          				<a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><button id='showCommands' className='button btn-danger'>Audio Commands</button> <span className="caret"></span></a>
+          				<a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><button id='showCommands' className='button btn-xs btn-info'>Audio Commands</button> <span className="caret"></span></a>
           				<ul className="dropdown-menu">
             				<li><a href="#">Action</a></li>
             				<li><a href="#">Another action</a></li>
@@ -48,6 +58,7 @@ const App = connect(
           				</ul>
         			</li>
       			</ul>
+       
     		</div>
   		</div>
 	</nav>
