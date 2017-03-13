@@ -11,9 +11,26 @@
   font-size: 10px;
 }
 
+.marLeft {
+  margin-left: 10px
+}
+
+.wider {
+  width:400px;
+}
+
 .prompt {
   width:500px;
   height: 100px;
+}
+
+#showModal {
+  text-align:center;
+  font-style: bold;
+  color: red;
+  font-size: 18px;
+  background-color:black;
+  border-radius: 5%
 }
 
 .stretch {

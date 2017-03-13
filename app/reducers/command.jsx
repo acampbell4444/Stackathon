@@ -45,7 +45,6 @@ export const grabCommands = () =>
     axios.get('/api/commands')
       .then(response => {
         const commands = response.data
-        console.log('zzzzzz', commands)
         return dispatch(getAllCommands(commands))
       })
       .catch(err => console.err)

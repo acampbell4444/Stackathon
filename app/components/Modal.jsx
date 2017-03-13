@@ -33,7 +33,7 @@ export default class extends React.Component {
           aria-labelledby="contained-modal-title-lg"
         >
           <Modal.Header closeButton>
-            <Modal.Title className='center' id="contained-modal-title-lg">Teach Arty to Speak!</Modal.Title>
+            <Modal.Title className='center' id="contained-modal-title-lg">Teach Me to Speak!</Modal.Title>
           </Modal.Header>
           <Modal.Body>
           <div className='center'>

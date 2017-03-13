@@ -4,14 +4,34 @@ import Login from './Login'
 import WhoAmI from './WhoAmI'
 import { Link, browserHistory } from 'react-router';
 import store from '../store'
+import {grabCommands} from '../reducers/command'
+
+let cmdList = [ 
+                ['Login', 'Logs User In'],
+                ['Log Out', 'Logs User Out'],
+                ['Go Back', 'Goes back one page'],
+                ['Go Forward', 'Goes forward one page'],
+                ['Go Home', 'Goes to the home page'],
+                ['Grab Bar *(one)', 'Grabs specified bar'],
+                ['Select *(A 150)', 'Selects specified person and inputs their weight'],
+                ['Go Forward', 'Goes to forward one page'],
+                ['Show Commands', 'Shows this command list'],
+                ['Hide Commands', 'Hides this List'],
+                ['Add to Conversation', 'Shows New Command Form'],
+                ['Add prompt', 'Selects prompt field in new command form'],
+                ['Add response', 'Selects response field '],
+                ['Submit', 'Submit new conversation form'],
+                ['Prompts and Responses', 'See current prompts and responses'],
 
 
+              ]
 
 const App = connect(
   ({ auth }) => ({ user: auth })
 ) (
   ({ user, children }) =>
   <div>
+
  
 	<nav className="navbar navbar-inverse">
   		<div className="container-fluid">
@@ -36,28 +56,31 @@ const App = connect(
       			</form>
             <ul className="nav navbar-nav navbar-right">
               <li className="dropdown">
-                  <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><button id='showCommands' className='button btn-xs btn-success'>Conversation</button> <span className="caret"></span></a>
+                  <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><button id='conversation' className='button btn-xs btn-success'>Conversation</button> <span className="caret"></span></a>
                   <ul className="dropdown-menu">
                     <li>
-                      <Link to='/showModal'><p id='showModal'>Teach Arty to Speak!</p> </Link>
+                      <Link to='/showModal'><p id='showModal'>Add to Conversation</p> </Link>
                     </li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">"Go Back" : Goes to the last page</a></li>
                     <li role="separator" className="divider"></li>
-                    <li><a href="#">Separated link</a></li>
+                   <li>
+                      <Link to='/showConversation'><p id='showConversation'>See Current Prompts and Responses</p> </Link>
+                    </li>
                   </ul>
               </li>
             </ul>
       			<ul className="nav navbar-nav navbar-right">
         			<li><a><button className='button btn-xs btn-primary home' onClick={e=>browserHistory.push('/barBalancer')}>Home</button></a></li>
         			<li className="dropdown">
-          				<a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><button id='showCommands' className='button btn-xs btn-info'>Audio Commands</button> <span className="caret"></span></a>
-          				<ul className="dropdown-menu">
-            				<li><a href="#">Action</a></li>
-            				<li><a href="#">Another action</a></li>
-            				<li><a href="#">"Go Back" : Goes to the last page</a></li>
-            				<li role="separator" className="divider"></li>
-            				<li><a href="#">Separated link</a></li>
+          				<a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><button id='showCommands' className='button btn-xs btn-info'>Commands</button> <span className="caret"></span></a>
+          				<ul className="dropdown-menu wider">
+            				<li><h4 className='center'>Current Commands</h4></li>
+                    <li role="separator" className="divider"></li>
+            				{
+                      cmdList.map((cmd,i)=>(
+                        <p key={i} className='marLeft'>{'"'+ cmd[0]+'" : ' +cmd[1]}</p>
+                        ))
+
+                    }
           				</ul>
         			</li>
       			</ul>
@@ -78,7 +101,6 @@ let startArtyom
 
 
 
-
 $(()=>{
 
 let cmds=   [
@@ -95,7 +117,6 @@ let cmds=   [
                         indexes: ["grab Bar *"],
                         smart: true,
                         action: function(i,wildcard){
-                             console.log('taco!', wildcard)
                              $('.bar'+wildcard).click()
                         }
                   },
@@ -108,12 +129,16 @@ let cmds=   [
                         action: i=> history.forward()
                   },
                   {
-                        indexes: ["finalize command"],
+                        indexes: ["submit"],
                         action: i=>  $('#addCommand').click()
                   },
                   {
                     	indexes: ["go home"],
                         action: i=> { $('.home').click(); artyom.say("Geez! Don't be so mean")}
+                  },
+                  {
+                      indexes: ["conversation", "go to to conversation"],
+                        action: i=>  $('#conversation').click()
                   },
                   {
                       indexes: ["add to conversation"],
@@ -124,8 +149,12 @@ let cmds=   [
                         action: i=> { $('#closeModal').click();artyom.say("closing")}
                   },
                   {
-                    	indexes: ["show commands"],
+                    	indexes: ["show commands, commands"],
                         action: i=> $('#showCommands').click()
+                  },
+                  {
+                      indexes: ["conversation options", "prompts and responses", "see prompts and responses"],
+                        action: i=> $('#showConversation').click()
                   },
                   {
                       indexes: ['add prompt', 'and fronts', 'add prompts','prompt'],
