@@ -12,6 +12,7 @@ import MultiFlyAdvContainer from './containers/MultiFlyAdvContainer'
 import MultiFlyContainer from './containers/MultiFlyContainer'
 import DoubleContainer from './containers/DoubleContainer'
 import DoubleSpContainer from './containers/DoubleSpContainer'
+import ModalContainer from './containers/ModalContainer'
 import NewCommand from './components/NewCommand'
 import {grabCommands} from './reducers/command'
 
@@ -33,6 +34,7 @@ export default function Root () {
               <Route path="/double" component={DoubleContainer} onEnter={getCommands}/>
               <Route path="/doubleSp" component={DoubleSpContainer} onEnter={getCommands}/>
               <Route path="/newCommand" component={NewCommand} />
+              <Route path='/showModal' component={ModalContainer} />
       			</Route>
   			</Router>
   		</Provider>

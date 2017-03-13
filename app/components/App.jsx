@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import Login from './Login'
 import WhoAmI from './WhoAmI'
 import { Link, browserHistory } from 'react-router';
+import store from '../store'
 
 
 
@@ -37,7 +38,9 @@ const App = connect(
               <li className="dropdown">
                   <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><button id='showCommands' className='button btn-xs btn-success'>Conversation</button> <span className="caret"></span></a>
                   <ul className="dropdown-menu">
-                    <li><a href="#">Teach Arty to Talk</a></li>
+                    <li>
+                      <Link to='/showModal'><p id='showModal'>Teach Arty to Speak!</p> </Link>
+                    </li>
                     <li><a href="#">Another action</a></li>
                     <li><a href="#">"Go Back" : Goes to the last page</a></li>
                     <li role="separator" className="divider"></li>
@@ -74,6 +77,8 @@ export default App
 let startArtyom
 
 
+
+
 $(()=>{
 
 let cmds=   [
@@ -103,24 +108,50 @@ let cmds=   [
                         action: i=> history.forward()
                   },
                   {
+                        indexes: ["finalize command"],
+                        action: i=>  $('#addCommand').click()
+                  },
+                  {
                     	indexes: ["go home"],
                         action: i=> { $('.home').click(); artyom.say("Geez! Don't be so mean")}
-                  },  
+                  },
+                  {
+                      indexes: ["add to conversation"],
+                        action: i=> { $('#showModal').click(); artyom.say("Yes! Please teach me to say something")}
+                  },
+                  {
+                      indexes: ["close form", "closed form", "clothes form"],
+                        action: i=> { $('#closeModal').click();artyom.say("closing")}
+                  },
                   {
                     	indexes: ["show commands"],
                         action: i=> $('#showCommands').click()
                   },
                   {
+                      indexes: ['add prompt', 'and fronts', 'add prompts','prompt'],
+                        action: i=> {
+                          $('#prompt').blur()
+                          $('#prompt').focus()
+                        }
+                  },
+                  {
+                      indexes: ["add response"],
+                        action: i=> {
+                          $('#response').blur()
+                          $('#response').focus()
+                        }
+                  },
+                  {
                     	indexes: ["hide commands"],
                         action: i=> $('#showCommands').click()
                   },
-   				  {
+   				        {
                     	indexes: ["log out", "logout"],
                         action: i=> $('#byebye').click()
                   },
                   {
                     	indexes: ["log in", "login"],
-                        action: i=> $('.login').click()
+                        action: i=> $('#login').click()
                   },
                   {
                     	indexes: ["tell me what it's all about", "tell me what it is all about"],
@@ -171,7 +202,14 @@ let cmds=   [
 
 	artyom.redirectRecognizedTextOutput(function(recognized,isFinal){
 	    if(isFinal){
-	         $('.stretch').val(recognized)
+           $('.stretch').val(recognized)
+           
+           if ($("#prompt").is(":focus")) {
+                $("#prompt").val(recognized)
+                $("#prompt").blur()
+            }else if ($("#response").is(":focus"))
+              $("#response").val(recognized)
+              $("#response").blur()
 	    }else{
 	        console.log(recognized);
 	    }
@@ -179,21 +217,6 @@ let cmds=   [
 
 })
 
-	// let dictation = artyom.newDictation({
- //    continuous:true, // Enable continuous if HTTPS connection
- //    onResult:function(text){
- //        // Do something with the text
- //        console.log(text);
- //    },
- //    onStart:function(){
- //        console.log("Dictation started by the user");
- //    },
- //    onEnd:function(){
- //        alert("Dictation stopped by the user");
- //    }
-	// })
-
-	// dictation.start()
 
 
 

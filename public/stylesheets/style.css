@@ -11,6 +11,11 @@
   font-size: 10px;
 }
 
+.prompt {
+  width:500px;
+  height: 100px;
+}
+
 .stretch {
   margin-top: 11px;
   width: 500px;

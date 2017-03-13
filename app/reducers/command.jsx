@@ -16,9 +16,6 @@ const initState = {
   newCommand: {}
 }
 
-
-
-
 const reducer = (state = initState, action) => {
   const newState = Object.assign({}, state)
   switch (action.type) {
@@ -35,12 +32,13 @@ const reducer = (state = initState, action) => {
 }
 
 
-export const createCommand = (username, password) =>
-  dispatch =>
-    axios.post('/api/commands')
+export const createCommand = (command) =>
+  dispatch => {
+    console.log('commy',command)
+    axios.post('/api/commands', command)
     .then((command) => dispatch(addCommand(command) ) )
     .catch((err) => console.err)
-
+}
 
 export const grabCommands = () =>
   dispatch =>
