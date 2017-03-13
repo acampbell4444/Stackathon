@@ -149,7 +149,7 @@ let cmds=   [
                         action: i=> { $('#closeModal').click();artyom.say("closing")}
                   },
                   {
-                    	indexes: ["show commands, commands"],
+                    	indexes: ["show commands", "commands"],
                         action: i=> $('#showCommands').click()
                   },
                   {

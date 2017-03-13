@@ -49,7 +49,7 @@ export default class extends React.Component {
                       <h3>Add Prompt</h3>
                   </div>
                  <div className='row'>
-                    <textarea id='prompt' className='prompt response' name="prompt" placeholder='Add Your Prompt Here' required/>
+                    <textarea id='prompt' className='prompt response' name="prompt" placeholder='Add Your Prompt Here' autoFocus required/>
                   </div>
                    <div className='row'>
                       <h3>Add Response</h3>
