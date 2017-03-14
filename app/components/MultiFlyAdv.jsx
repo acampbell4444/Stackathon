@@ -190,7 +190,7 @@ function trips (a,b,c){
   if(diff>110){
   		spotOne = spotTwo = spotThree = spotFour = spotFive = spotSix = error = null
   		position = 9
- 		error = 'This weight differences are too extreme for this triple combination when using the MultiFlyer Advantage Bar. At least two passengers must be within 110 lbs of each other'
+ 		error = 'This weight differences are too extreme for this triple combination when using the MultiFlyer Advanced Bar. At least two passengers must be within 110 lbs of each other'
  	}
   switch(true) {
       case (diff<=10):
