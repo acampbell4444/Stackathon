@@ -38,6 +38,7 @@ export function DoubleSp ({personA, personB}) {
             <div className='container-fluid barContainer'>
   		        <img className='img-responsive barImage' 
   		       		   src='../../public/DoublSp.png'
+        
   		       	/>
               <p className={spotOne + ' indicators spTop'  } id='spLeft1'>{spotOne}</p>
               <p className={spotTwo + ' indicators spTop' } id='spLeft2'>{spotTwo}</p>

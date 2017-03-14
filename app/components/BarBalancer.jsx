@@ -28,7 +28,7 @@ export default class BarBalancer extends Component {
 					<button onClick={e=>browserHistory.push('/multifly')} className='barone bar1 barwon'>
 					<p className='barNum'>1</p>
 						<img className='img-responsive img-thumbnail thumbs center tripleShrink' 
-				 			 src='../../public/MultiFly.png'
+				 			 src='/MultiFly.png'
 						/>
 						</button>
 					</span>
@@ -37,7 +37,7 @@ export default class BarBalancer extends Component {
 	        		<button onClick={e=>browserHistory.push('/multiflyAdv')} className='bartwo bar2 barto bartoo'>
 	        		<p className='barNum'>2</p>
 		        		<img className='img-responsive img-thumbnail thumbs center tripleShrink' 
-		       		 		 src='../../public/MultiFlyAdv.png'
+		       		 		 src='/MultiFlyAdv.png'
 		       			/>
 		       		</button>
 		    	</span>
@@ -47,7 +47,7 @@ export default class BarBalancer extends Component {
 					<button onClick={e=>browserHistory.push('/double')} className='barthree bar3'>
 					<p className='barNum'>3</p>
 			       		<img className='img-responsive img-thumbnail thumbs center dubShrink' 
-			       		 	 src='../../public/Doublizer.png'
+			       		 	 src='/Doublizer.png'
 			       		/>
 		       		</button>
 		    	</span>
@@ -55,7 +55,7 @@ export default class BarBalancer extends Component {
 					<button onClick={e=>browserHistory.push('/doubleSp')} className='barfour barfor bar4'>
 					<p className='barNum'>4</p>
 		       			<img className='img-responsive img-thumbnail  thumbs center dubShrink' 
-		       				 src='../../public/DoublSP.png'
+		       				 src='/DoublSp.png'
 		        		/>
 	        		</button>
 		    	</span>
